@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+<h:head>
+      	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>EsiScrum</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css" />
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css" />
+	<!-- /global stylesheets -->
+
+
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/plugins/notifications/bootbox.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/notifications/sweet_alert.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/components_modals.js"></script>
+	
+	
+	
+	
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/widgets.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switch.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/sliders/nouislider.min.js"></script>
+
+	
+	
+	
+	
+	
+	
+		<script type="text/javascript" src="assets/js/plugins/notifications/jgrowl.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/anytime.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/legacy.js"></script>
+	<script type="text/javascript" src="assets/js/pages/picker_date.js"></script>
+	
+	
+
+
+
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/core.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+	
+	<!-- Core JS files -->
+	
+	
+	
+		
+	
+	<script type="text/javascript" src="assets/js/pages/form_selectbox.js"></script>
+
+
+
+<script type="text/javascript" src="js/backlog.js"></script>
+</h:head>
+<h:body onload="ll('#{esiscrumBean.oldIdBacklog}')">
+    <h:form id="formAjax" class="form-horizontal">
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a style="margin-left: 10px"  href="index.html"><img src="image/laga.png" alt="" /></a>
+		</div>
+
+
+
+<h:inputHidden value="#{esiscrumBean.ppcurrent}"   id="ppcurrent" valueChangeListener="#{esiscrumBean.changeproject}"   />
+
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li><a  style="font-size: 16px; margin-right:10px" href="project.xhtml">Project</a></li>
+				<li><a  href="people.xhtml" style="font-size: 16px; margin-right:10px">People</a></li>
+				<li><a href="backlog.xhtml" style="font-size: 16px; margin-right:10px" >Backlog</a></li>
+				<li><a href="sprint.xhtml" style="font-size: 16px; margin-right:10px">Sprint</a></li>
+				<li><a href="taskboard.xhtml" style="font-size: 16px; margin-right:10px">Task board</a></li>
+				<li><a href="sprintchart.xhtml" style="font-size: 16px; margin-right:10px">Sprint chart</a></li>
+					<li><a href="burndown.xhtml" style="font-size: 16px; margin-right:10px">Burndown</a></li>
+				<li><a href="chat.xhtml" style="font-size: 16px; margin-right:10px">Chat</a></li>
+			</ul>
+
+
+
+			<div class="navbar-right">
+				<ul class="nav navbar-nav">
+				
+				<li class="dropdown" style="margin-top:4px;margin-right:4px;">
+				
+									<h:selectOneMenu  value="#{esiscrumBean.currentProject.id}" class="selectbox" valueChangeListener="#{esiscrumBean.ChangeCurrentProject}" onchange="submit()">
+										
+					<f:selectItems value="#{esiscrumBean.listproject}" var="mp" 
+       							 itemLabel="#{mp.nom}" itemValue="#{mp.id}" />
+							
+						</h:selectOneMenu>
+				</li>							
+											
+
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-people"></i>
+							<span class="visible-xs-inline-block position-right">Users</span>
+						</a>
+						
+						<div class="dropdown-menu dropdown-content">
+							<div class="dropdown-content-heading">
+								People
+								<ul class="icons-list">
+									<li><a href="people.xhtml"><i class="icon-gear"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body width-300">
+							
+							<ui:repeat value="#{esiscrumBean.listMembre}" id="listmembre" var="b" varstatus="status">
+								<li class="media">
+									<div class="media-left"><img src="#{b.image}" class="img-circle img-sm" alt=""/></div>
+									<div class="media-body">
+										<a href="#" class="media-heading text-semibold">#{b.username}</a>
+										<span class="display-block text-muted text-size-small">#{b.nom}&nbsp;#{b.prenom}</span>
+									</div>
+									<div class="media-right media-middle"><span class="status-mark border-success"></span></div>
+								</li>
+
+							</ui:repeat>
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="#" data-popup="tooltip" title="All users"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+					</li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bubbles4"></i>
+							<span class="visible-xs-inline-block position-right">Messages</span>
+							
+						</a>
+						
+						<div class="dropdown-menu dropdown-content width-350">
+							<div class="dropdown-content-heading">
+								Messages
+								<ul class="icons-list">
+									<li><a href="chat.xhtml"><i class="icon-compose"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body">
+
+
+	
+<ui:repeat value="#{esiscrumBean.listchat}" id="listchat" var="m" varstatus="status">
+								<li class="media">
+									<div class="media-left"><img src="#{m.user.image}" class="img-circle img-sm" alt=""/></div>
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">#{m.user.username}</span>
+											<span class="media-annotation pull-right">#{m.date}</span>
+										</a>
+
+										<span class="text-muted">#{m.message}</span>
+									</div>
+								</li>
+
+</ui:repeat>
+
+
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="chat.xhtml" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+					</li>
+
+					<li class="dropdown dropdown-user">
+						<a class="dropdown-toggle" data-toggle="dropdown">
+							<img src="#{esiscrumBean.currentMembre.image}" alt=""/>
+							<span>#{esiscrumBean.currentMembre.username}</span>
+							<i class="caret"></i>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="profile.xhtml"><i class="icon-user-plus"></i> My profile</a></li>
+							<li><a href="chat.xhtml"><i class="icon-comment-discussion"></i> Messages</a></li>
+							<li class="divider"></li>
+							<li><a href="login.xhtml"><i class="icon-switch2"></i> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content">
+
+    						     <div style="display: none;" >
+                     <p:dataList id="idlistbacklog"
+                                value="#{esiscrumBean.listbacklog}"/>
+                  </div>
+	<div class="raw">
+	<div class="col-md-12">
+	
+
+
+
+    <p:toolbar style="border:none; background-color: background-color:rgb(245,245,245);" class="panel panel-info" >
+        <f:facet name="left">
+            	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formaddproject"><i class="icon-plus3"></i> Add project</button>
+
+        </f:facet>
+ 
+        <f:facet name="right">
+        </f:facet>
+ 
+    </p:toolbar>
+    </div>
+							
+	<div class="col-md-12">
+	<p:panel id="idpanelprojects" class="panel panel-default" style="min-height: 777px" >
+					<div class="panel-body">
+						<div class="raw">
+						
+					
+						<ui:repeat value="#{esiscrumBean.listproject}" id="listproject" var="b" varstatus="status">
+							<div class="panel panel-default border-xlg border-primary">
+								<div class="panel-heading">
+								
+									<h6 class="panel-title" data-toggle="modal" data-target="##{b.id}"><h:outputText value="#{b.nom}" /></h6>
+									<div class="heading-elements">
+									<ui:fragment rendered="#{b.id == esiscrumBean.currentProject.id}"> 
+									<span class="heading-text"><span class="label label-primary "><h:outputText value="Current project" /></span></span>
+									</ui:fragment>
+				                	</div>
+								</div>
+							</div>
+							
+							
+							
+							
+									         <!--formaddproject  -->
+					<div id="#{b.id}" class="modal fade">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title"> Add a person</h5>
+								</div>
+
+								
+									<div class="modal-body">
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Nom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{b.nom}" class="form-control" required="false" />
+											</div>
+										</div>
+										
+										
+	
+					<div class="form-group">
+											<label class="control-label col-sm-3">Description</label>
+											<div class="col-sm-9">
+											<h:inputTextarea rows="5" cols="5" class="form-control" value="#{b.description}"/>
+											</div>
+										</div>
+									</div>
+
+									<div class="modal-footer">
+									<button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Fermer</button>
+									<button class="btn btn-danger" id='a' data-dismiss="modal" onclick="alert2('a')"   ><i class=" icon-trash"></i> Supprimer</button>
+			<h:commandButton  value="Enregister" actionListener="#{esiscrumBean.uploadProject(b)}" class="btn btn-primary icon-check">
+<f:ajax render=":formAjax:idpanelprojects" execute="@form" event="keyup" />
+				
+			</h:commandButton>
+									</div>
+								
+							</div>
+						</div>
+					</div>
+					
+					
+			
+					<!-- /fformaddproject -->
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+						</ui:repeat>
+						
+
+
+						</div>
+					</div>
+	</p:panel>
+	</div>	
+	</div>
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+	
+			
+		         <!--formaddproject  -->
+					<div id="formaddproject" class="modal fade">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title"> Add a person</h5>
+								</div>
+
+								
+									<div class="modal-body">
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Nom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{esiscrumBean.project.nom}" class="form-control" required="false" />
+											</div>
+										</div>
+										
+										
+	
+					<div class="form-group">
+											<label class="control-label col-sm-3">Description</label>
+											<div class="col-sm-9">
+											<h:inputTextarea rows="5" cols="5" class="form-control" value="#{esiscrumBean.project.description}"/>
+											</div>
+										</div>
+									</div>
+
+									<div class="modal-footer">
+									<button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Fermer</button>
+									
+			<h:commandButton  value="Enregister" actionListener="#{esiscrumBean.addProject}" class="btn btn-primary icon-check">
+<f:ajax render=":formAjax:idpanelprojects" execute="@form" event="keyup" />
+				
+			</h:commandButton>
+									</div>
+								
+							</div>
+						</div>
+					</div>
+					
+					
+			
+					<!-- /fformaddproject -->
+					
+
+
+    </h:form>
+</h:body>
+</html>

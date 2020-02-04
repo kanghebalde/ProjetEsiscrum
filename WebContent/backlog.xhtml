@@ -1,0 +1,1077 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+
+	>
+
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>EsiScrum</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css" />
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css" />
+	<!-- /global stylesheets -->
+
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css" />
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css" />
+
+	<!-- Core JS files -->
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/widgets.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switch.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/sliders/nouislider.min.js"></script>
+
+
+
+
+
+	<script type="text/javascript" src="assets/js/plugins/notifications/jgrowl.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/anytime.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/legacy.js"></script>
+	<script type="text/javascript" src="assets/js/pages/picker_date.js"></script>
+
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/core.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/picker_color.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/color/spectrum.js"></script>
+	<script type="text/javascript" src="assets/js/pages/form_selectbox.js"></script>
+
+
+
+	<script type="text/javascript" src="assets/js/plugins/notifications/sweet_alert.min.js"></script>
+	<script type="text/javascript" src="assets/js/pages/appearance_panel_heading.js"></script>
+	<script type="text/javascript" src="assets/js/pages/components_modals.js"></script>
+	
+	
+	
+	
+	
+	
+	
+	<script type="text/javascript" src="js/backlog.js"></script>
+
+</head>
+
+<body class="login-container" onload="ll('#{esiscrumBean.oldIdBacklog}')" >
+
+<h:form id="formAjax" class="form-horizontal">
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a style="margin-left: 10px"  href="index.html"><img src="image/laga.png" alt="" /></a>
+		</div>
+
+
+
+<h:inputHidden value="#{esiscrumBean.ppcurrent}"   id="ppcurrent" valueChangeListener="#{esiscrumBean.changeproject}"   />
+
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li><a  style="font-size: 16px; margin-right:10px" href="project.xhtml">Project</a></li>
+				<li><a  href="people.xhtml" style="font-size: 16px; margin-right:10px">People</a></li>
+				<li><a href="backlog.xhtml" style="font-size: 16px; margin-right:10px" >Backlog</a></li>
+				<li><a href="sprint.xhtml" style="font-size: 16px; margin-right:10px">Sprint</a></li>
+				<li><a href="taskboard.xhtml" style="font-size: 16px; margin-right:10px">Task board</a></li>
+				<li><a href="sprintchart.xhtml" style="font-size: 16px; margin-right:10px">Sprint chart</a></li>
+					<li><a href="burndown.xhtml" style="font-size: 16px; margin-right:10px">Burndown</a></li>
+				<li><a href="chat.xhtml" style="font-size: 16px; margin-right:10px">Chat</a></li>
+			</ul>
+
+
+
+			<div class="navbar-right">
+				<ul class="nav navbar-nav">
+				
+				<li class="dropdown" style="margin-top:4px;margin-right:4px;">
+				
+									<h:selectOneMenu  value="#{esiscrumBean.currentProject.id}" class="selectbox" valueChangeListener="#{esiscrumBean.ChangeCurrentProject}" onchange="submit()">
+										
+					<f:selectItems value="#{esiscrumBean.listproject}" var="mp" 
+       							 itemLabel="#{mp.nom}" itemValue="#{mp.id}" />
+							
+						</h:selectOneMenu>
+				</li>							
+											
+
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-people"></i>
+							<span class="visible-xs-inline-block position-right">Users</span>
+						</a>
+						
+						<div class="dropdown-menu dropdown-content">
+							<div class="dropdown-content-heading">
+								People
+								<ul class="icons-list">
+									<li><a href="people.xhtml"><i class="icon-gear"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body width-300">
+							
+							<ui:repeat value="#{esiscrumBean.listMembre}" id="listmembre" var="b" varstatus="status">
+								<li class="media">
+									<div class="media-left"><img src="#{b.image}" class="img-circle img-sm" alt=""/></div>
+									<div class="media-body">
+										<a href="#" class="media-heading text-semibold">#{b.username}</a>
+										<span class="display-block text-muted text-size-small">#{b.nom}&nbsp;#{b.prenom}</span>
+									</div>
+									<div class="media-right media-middle"><span class="status-mark border-success"></span></div>
+								</li>
+
+							</ui:repeat>
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="#" data-popup="tooltip" title="All users"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+					</li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bubbles4"></i>
+							<span class="visible-xs-inline-block position-right">Messages</span>
+							
+						</a>
+						
+						<div class="dropdown-menu dropdown-content width-350">
+							<div class="dropdown-content-heading">
+								Messages
+								<ul class="icons-list">
+									<li><a href="chat.xhtml"><i class="icon-compose"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body">
+
+
+	
+<ui:repeat value="#{esiscrumBean.listchat}" id="listchat" var="m" varstatus="status">
+								<li class="media">
+									<div class="media-left"><img src="#{m.user.image}" class="img-circle img-sm" alt=""/></div>
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">#{m.user.username}</span>
+											<span class="media-annotation pull-right">#{m.date}</span>
+										</a>
+
+										<span class="text-muted">#{m.message}</span>
+									</div>
+								</li>
+
+</ui:repeat>
+
+
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="chat.xhtml" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+					</li>
+
+					<li class="dropdown dropdown-user">
+						<a class="dropdown-toggle" data-toggle="dropdown">
+							<img src="#{esiscrumBean.currentMembre.image}" alt=""/>
+							<span>#{esiscrumBean.currentMembre.username}</span>
+							<i class="caret"></i>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="profile.xhtml"><i class="icon-user-plus"></i> My profile</a></li>
+							<li><a href="chat.xhtml"><i class="icon-comment-discussion"></i> Messages</a></li>
+							<li class="divider"></li>
+							<li><a href="login.xhtml"><i class="icon-switch2"></i> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Simple panel -->
+					<div class="raw">
+					<div class="col-md-2">
+					</div>
+					<div class="col-md-8">
+
+
+			
+		
+		
+
+<ui:repeat value="#{esiscrumBean.listbacklog}" id="listbacklog" var="b" varstatus="status">
+							<!-- Spinner and progress bar -->
+						<ui:fragment rendered="#{b.etat == 'todo'}">
+							<div class="panel panel-default border-xlg border-info">
+								<div class="panel-heading">
+								
+									<h6 class="panel-title" data-toggle="modal" data-target="##{b.id}"><h:outputText value="#{b.nom}" /></h6>
+									<div class="heading-elements">
+									<span class="heading-text"><span class="label label-info label-rounded"><h:outputText value="#{b.etat}" /></span></span>
+										<span class="heading-text"><i class="icon-alarm"></i> <h:outputText value=" #{b.totalheure}" />H</span>
+									<div class="progress progress-rounded">
+										<div class="progress-bar progress-bar-info" style="width: 100%">
+											<span><h:outputText value=" #{b.prcProgression}% Complete" /></span>
+										</div>
+									</div>
+				                	</div>
+								</div>
+							</div>
+						</ui:fragment>
+						<ui:fragment rendered="#{b.etat == 'inprogress'}">
+							<div class="panel panel-default border-xlg border-primary">
+								<div class="panel-heading">
+								
+									<h6 class="panel-title" data-toggle="modal" data-target="##{b.id}"><h:outputText value="#{b.nom}" /></h6>
+									<div class="heading-elements">
+									<span class="heading-text"><span class="label label-primary label-rounded"><h:outputText value="#{b.etat}" /></span></span>
+										<span class="heading-text"><i class="icon-alarm"></i> <h:outputText value=" #{b.totalheure}" />H</span>
+									<div class="progress progress-rounded">
+										<div class="progress-bar progress-bar-primary" style="width: #{b.prcProgression}%">
+											<span><h:outputText value=" #{b.prcProgression}%" /></span>
+										</div>
+									</div>
+				                	</div>
+								</div>
+							</div>
+						</ui:fragment>
+						<ui:fragment rendered="#{b.etat == 'done'}">
+							<div class="panel panel-default border-xlg border-success">
+								<div class="panel-heading">
+									<h6 class="panel-title" data-toggle="modal" data-target="##{b.id}"><h:outputText value="#{b.nom}" /></h6>
+									<div class="heading-elements">
+									<span class="heading-text"><span class="label label-success label-rounded"><h:outputText value="#{b.etat}" /></span></span>
+										<span class="heading-text"><i class="icon-alarm"></i> <h:outputText value=" #{b.totalheure}" />H</span>
+									<div class="progress progress-rounded">
+										<div class="progress-bar progress-bar-success" style="width: #{b.prcProgression}%">
+											<span><h:outputText value=" #{b.prcProgression}%" /></span>
+										</div>
+									</div>
+				                	</div>
+								</div>
+							</div>
+						</ui:fragment>
+							<!-- /spinner and progress bar -->
+
+</ui:repeat>
+
+
+		
+
+	
+
+
+
+
+
+
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#formaddbacklogitem"><i class="icon-plus3"></i> Add Backlog item</button>
+
+
+					</div>
+					<div class="col-md-2"></div>
+					</div><!-- /RAW -->
+
+
+	
+					<!-- /fieldset legend -->
+				</div>
+					<!-- /simple panel -->
+
+
+
+<ui:repeat value="#{esiscrumBean.listbacklog}" id="listmodals" var="b" varstatus="status">
+	            <!-- Horizontal form modal -->
+					<div id="#{b.id}" class="modal fade">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title">Backlog item #{b.id}</h5>
+								
+								</div>
+
+								
+									<div class="modal-body">
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Nom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{b.nom}" class="form-control" required="false"
+						id="nom" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Assigner a</label>
+											<div class="col-sm-9">
+
+													<select class="selectbox"  name="creerpar" id="creerpar" onchange="getUser(this.value)">
+														<option >
+															
+														</option>
+					<ui:repeat value="#{esiscrumBean.listMembre}"  var="m" varstatus="status">
+							<!-- Spinner and progress bar -->
+						<ui:fragment rendered="#{m.username == b.user}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" selected="selected">
+										#{m.username}
+								</option>
+						</ui:fragment>
+						<ui:fragment rendered="#{m.username != b.user}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" >
+										#{m.username}
+								</option>
+						</ui:fragment>
+					</ui:repeat>
+										
+													</select>
+											</div>
+										</div>
+
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Date limite </label>
+											<div class="col-sm-9">
+											<div class="input-group">
+											<span class="input-group-addon"><i class="icon-calendar5"></i></span>
+							<h:inputText value="#{b.datelimite}" class="form-control pickadate-weekday" required="false"  placeholder="Veuillez entrer la date limite du Backlog" />
+										</div>
+											</div>
+										</div>
+
+
+
+
+
+<ui:repeat value="#{m.sprint}"  var="s" varstatus="status">
+							<!-- Spinner and progress bar -->
+						<ui:fragment rendered="#{s != 'none'}">
+										<div class="form-group">
+											<label class="control-label col-sm-3">Sprint</label>
+											<div class="col-sm-9">
+			
+   					<h:selectOneMenu  class="selectbox"	>
+										
+					<f:selectItems value="#{esiscrumBean.backlogItem.sprint}" var="sp" 
+       							 itemLabel="#{sp.nom}" itemValue="#{sp.id}" />
+							
+					</h:selectOneMenu>
+											</div>
+										</div>
+						</ui:fragment>
+							<!-- /spinner and progress bar -->
+
+</ui:repeat>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Description</label>
+											<div class="col-sm-9">
+											<h:inputTextarea rows="5" cols="5" class="form-control" placeholder="Enter la description du Backlog" value="#{b.description}"/>
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Difficulté (points)</label>
+											<div class="col-sm-4">
+											
+
+										
+																<h:selectOneMenu  value="#{b.difficulte}" class="selectbox">					
+					<f:selectItems value="#{esiscrumBean.listdifficulte}" var="mp" 
+       							 itemLabel="#{mp}" itemValue="#{mp}" />	
+						</h:selectOneMenu>
+										
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Total heure estimée</label>
+											<div class="col-sm-4">
+											<div class="input-group">
+											<span class="input-group-addon"><i class="icon-alarm"></i></span>
+											<h:inputText value="#{b.totalheure}" class="form-control" required="false"/>
+										</div>
+											</div>
+										</div>
+
+
+
+
+<div>
+	
+							<!-- Progress bar -->
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title">Tasks</h6>
+								</div>
+								
+								<div class="panel-body" >
+	
+									<div class="raw" id="backlog1">
+
+	<ui:repeat value="#{b.tasks}"  var="ta" varstatus="status">	
+											<div class="col-md-4">
+											
+							<!-- Progress bar -->
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title" data-toggle="modal" data-target="##{ta.id}">#{ta.nom}</h6>
+								</div>
+								
+								
+
+								<div class="panel-footer">
+									<div class="heading-elements">
+									<span class="heading-text"><span class="label label-default label-rounded">#{ta.user}</span></span>
+										<span class="heading-text"><i class="icon-alarm"></i> #{ta.totalHeure}</span>
+									<div class="progress progress-rounded">
+									<ui:fragment rendered="#{ta.etat == 'done'}">
+									     <div class="progress-bar progress-bar-success" style="width: 100%">
+											<span>100% Complete</span>
+										</div>
+									</ui:fragment>
+									<ui:fragment rendered="#{ta.etat != 'done'}">
+									     <div class="progress-bar progress-bar-primary" style="width: 100%">
+											<span>0% Complete</span>
+										</div>
+									</ui:fragment>
+
+									</div>
+									</div>
+								</div>
+							</div>
+							<!-- /progress bar -->
+
+
+										</div>
+	
+	</ui:repeat>
+									</div>
+
+
+				
+
+								</div>
+
+								<div class="panel-footer">
+									<div class="heading-elements">
+										<span class="heading-text text-semibold"  data-toggle="modal" data-target="##{b.tacheid}" href="#">Add task</span>
+										<div class="progress pull-right">
+											<div class="progress-bar progress-bar-success" style="width: 100%;">
+												<span >#{b.prcProgression}% Complete</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /progress bar -->
+
+
+</div>
+
+
+									</div>
+
+									<div class="modal-footer">
+									<button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Fermer</button>
+									<button class="btn btn-danger" id='a' data-dismiss="modal" onclick="alert2('a')"   ><i class=" icon-trash"></i> Supprimer</button>
+			<h:commandButton  value="Enregister" actionListener="#{esiscrumBean.updateBacklog(b)}" class="btn btn-primary icon-check" onclick="getIdBacklog()">
+				<f:ajax render=":formAjax:listbacklog" execute="@form" event="keyup" />
+				<f:ajax render=":formAjax:listmodals" execute="@form" event="keyup" />
+				
+			</h:commandButton>
+									</div>
+								
+							</div>
+						</div>
+					</div>
+					<!-- /horizontal form modal -->
+					
+	
+			            <!-- Add Task Begin -->
+					<div id="#{b.tacheid}" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title"><i class="icon-add"></i> &nbsp;Add Task</h5>
+								</div>
+
+					
+									<div class="modal-body">
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Nom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{b.tachenom}" class="form-control" required="false"
+						 />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Assigner a</label>
+											<div class="col-sm-9">
+
+													<select class="selectbox" name="creerpar" id="creerpar" onchange='getUser(this.value)'>
+														<option >
+															
+														</option>
+					<ui:repeat value="#{esiscrumBean.listMembre}"  var="m" varstatus="status">
+							<!-- Spinner and progress bar -->
+						<ui:fragment rendered="#{m.username == b.tacheuser}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" selected="selected">
+										#{m.username}
+								</option>
+						</ui:fragment>
+						<ui:fragment rendered="#{m.username != b.tacheuser}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" >
+										#{m.username}
+								</option>
+						</ui:fragment>
+					</ui:repeat>
+													</select>
+											</div>
+										</div>
+
+
+
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Description</label>
+											<div class="col-sm-9">
+											<h:inputTextarea rows="5" cols="5" class="form-control" placeholder="Enter la description du Backlog" value="#{b.tachedescription}"/>
+											</div>
+										</div>
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Total heure estimée</label>
+											<div class="col-sm-4">
+											<div class="input-group">
+											<span class="input-group-addon"><i class="icon-alarm"></i></span>
+											<h:inputText value="#{b.tachetotalheure}" class="form-control" required="false"/>
+										</div>
+											</div>
+										</div>
+
+
+
+									</div>
+
+									<div class="modal-footer">
+									<button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Fermer</button>
+									 
+		    <h:commandButton  value="Enregister" actionListener="#{esiscrumBean.addTask(b.id)}" class="btn btn-primary icon-check">
+				<f:ajax render=":formAjax:listbacklog" execute="@form" event="keyup" />
+				<f:ajax render=":formAjax:listmodals" execute="@form" event="keyup" />
+				<f:ajax render=":formAjax" execute="@form" event="keyup" />
+
+				
+			</h:commandButton>
+									</div>
+				
+							</div>
+						</div>
+					</div>
+					<!-- /Add Task Begin -->	
+					
+					
+
+</ui:repeat>
+
+		            <!-- formaddbacklogitem -->
+					<div id="formaddbacklogitem" class="modal fade">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title"> Add Backlog item</h5>
+								</div>
+
+								
+									<div class="modal-body">
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Nom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{esiscrumBean.backlogItem.nom}" class="form-control" required="false"
+						id="nom" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Assigner a</label>
+											<div class="col-sm-9" >
+
+													<select class="selectbox" name="creerpar" id="creerpar" onchange='getUser(this.value)' >
+														<option >
+															
+														</option>
+					<ui:repeat value="#{esiscrumBean.listMembre}"  var="m" varstatus="status">
+							<!-- Spinner and progress bar -->
+						<ui:fragment rendered="#{m.username == esiscrumBean.backlogItem.user}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" selected="selected">
+										#{m.username}
+								</option>
+						</ui:fragment>
+						<ui:fragment rendered="#{m.username != esiscrumBean.backlogItem.user}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" >
+										#{m.username}
+								</option>
+						</ui:fragment>
+					</ui:repeat>
+										
+													</select>
+											</div>
+										</div>
+
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Date limite </label>
+											<div class="col-sm-9">
+											<div class="input-group">
+											<span class="input-group-addon"><i class="icon-calendar5"></i></span>
+							<h:inputText value="#{esiscrumBean.backlogItem.datelimite}" class="form-control pickadate-weekday" required="false"  placeholder="Veuillez entrer la date limite du Backlog" />
+										</div>
+											</div>
+										</div>
+
+
+
+
+
+<ui:repeat value="#{esiscrumBean.backlogItem.sprint}"  var="s" varstatus="status">
+							<!-- Spinner and progress bar -->
+						<ui:fragment rendered="#{s != 'none'}">
+										<div class="form-group">
+											<label class="control-label col-sm-3">Sprint</label>
+											<div class="col-sm-9">
+							<h:selectOneMenu  value="#{m.sprint}" class="selectbox"	>
+										
+					<f:selectItems  var="sp" 
+       							 itemLabel="#{sp.nom}" itemValue="#{sp.id}" />
+							
+					</h:selectOneMenu>
+
+											</div>
+										</div>
+						</ui:fragment>
+							<!-- /spinner and progress bar -->
+
+</ui:repeat>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Description</label>
+											<div class="col-sm-9">
+											<h:inputTextarea rows="5" cols="5" class="form-control" placeholder="Enter la description du Backlog" value="#{esiscrumBean.backlogItem.description}"/>
+											</div>
+										</div>
+										
+										
+										<div class="form-group">
+											<label class="control-label col-sm-3">Difficulté (points)</label>
+											<div class="col-sm-4">
+											
+
+					<h:selectOneMenu  value="#{esiscrumBean.backlogItem.difficulte}" class="selectbox">					
+					<f:selectItems value="#{esiscrumBean.listdifficulte}" var="mp" 
+       							 itemLabel="#{mp}" itemValue="#{mp}" />	
+						</h:selectOneMenu>
+										
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Total heure estimée</label>
+											<div class="col-sm-4">
+											<div class="input-group">
+											<span class="input-group-addon"><i class="icon-alarm"></i></span>
+											<h:inputText value="#{esiscrumBean.backlogItem.totalheure}" class="form-control" required="false"/>
+										</div>
+											</div>
+										</div>
+
+
+
+
+<div>
+	
+							<!-- Progress bar -->
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title">Tasks</h6>
+								</div>
+								
+								<div class="panel-body" >
+	
+									<div class="raw" id="backlog1">
+
+<ui:repeat value="#{esiscrumBean.backlogItem.tasks}"   var="ta" varstatus="status">	
+											<div class="col-md-4">
+											
+							<!-- Progress bar -->
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title" data-toggle="modal" data-target="##{ta.id}">#{ta.nom}</h6>
+								</div>
+								
+								
+
+								<div class="panel-footer">
+									<div class="heading-elements">
+									<span class="heading-text"><span class="label label-default label-rounded">#{ta.user}</span></span>
+										<span class="heading-text"><i class="icon-alarm"></i> #{ta.totalHeure}</span>
+									<div class="progress progress-rounded">
+												<ui:fragment rendered="#{ta.etat == 'done'}">
+									     <div class="progress-bar progress-bar-success" style="width: 100%">
+											<span>100% Complete</span>
+										</div>
+									</ui:fragment>
+									<ui:fragment rendered="#{ta.etat != 'done'}">
+									     <div class="progress-bar progress-bar-primary" style="width: 100%">
+											<span>0% Complete</span>
+										</div>
+									</ui:fragment>
+									</div>
+									</div>
+								</div>
+							</div>
+							<!-- /progress bar -->
+
+
+										</div>
+	
+	</ui:repeat>
+									</div>
+
+
+				
+
+								</div>
+
+								<div class="panel-footer">
+									<div class="heading-elements">
+										<span class="heading-text text-semibold"  data-toggle="modal" data-target="#addtask" href="#">Add task</span>
+										<div class="progress pull-right">
+											<div class="progress-bar progress-bar-success" style="width: 100%;">
+												<span >#{esiscrumBean.backlogItem.prcProgression}% Complete</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- /progress bar -->
+
+
+</div>
+
+
+									</div>
+
+									<div class="modal-footer">
+									<button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Fermer</button>
+									<button class="btn btn-danger" id='a' data-dismiss="modal" onclick="alert2('a')"   ><i class=" icon-trash"></i> Supprimer</button>
+			<h:commandButton  value="Enregister" actionListener="#{esiscrumBean.addBacklog}" class="btn btn-primary icon-check">
+				<f:ajax render=":formAjax:listbacklog" execute="@form" event="keyup" />
+				<f:ajax render=":formAjax:listmodals" execute="@form" event="keyup" />
+				
+			</h:commandButton>
+									</div>
+								
+							</div>
+						</div>
+					</div>
+					
+					
+					
+	
+<ui:repeat value="#{esiscrumBean.listTasks}" id="listtasks" var="t" varstatus="status">			
+					
+					
+							            <!-- Add Task -->
+					<div id="#{t.id}" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title"><i class="icon-add"></i> &nbsp;Add Task  #{t.id}</h5>
+								</div>
+
+					
+									<div class="modal-body">
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Nom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{t.nom}" class="form-control" required="false"
+						 />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Assigner a</label>
+											<div class="col-sm-9">
+
+													<select class="selectbox" name="creerpar" id="creerpar" onchange='getUser(this.value,"#{t.id}d")'>
+														<option >
+															
+														</option>
+					<ui:repeat value="#{esiscrumBean.listMembre}"  var="m" varstatus="status">
+							<!-- Spinner and progress bar -->
+						<ui:fragment rendered="#{m.username == t.user}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" selected="selected">
+										#{m.username}
+								</option>
+						</ui:fragment>
+						<ui:fragment rendered="#{m.username != t.user}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" >
+										#{m.username}
+								</option>
+						</ui:fragment>
+					</ui:repeat>
+										
+													</select>
+											</div>
+										</div>
+
+
+
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Description</label>
+											<div class="col-sm-9">
+											<h:inputTextarea rows="5" cols="5" class="form-control" placeholder="Enter la description du Backlog" value="#{t.description}"/>
+											</div>
+										</div>
+
+									<div class="form-group">
+											<label class="control-label col-sm-3">Statut</label>
+											<div class="col-sm-9">
+										<h:selectOneMenu
+													value="#{t.etat}" class="selectbox"
+											>
+												<f:selectItem itemLabel="To do" itemValue="todo"/>
+												<f:selectItem itemLabel="In progress" itemValue="inprogress"/>
+												<f:selectItem itemLabel="Done" itemValue="done"/>
+											</h:selectOneMenu>
+
+											</div>
+										</div>
+										
+										<div class="form-group">
+											<label class="control-label col-sm-3">Total heure estimée</label>
+											<div class="col-sm-4">
+											<div class="input-group">
+											<span class="input-group-addon"><i class="icon-alarm"></i></span>
+											<h:inputText value="#{t.totalHeure}" class="form-control" required="false"/>
+										</div>
+											</div>
+										</div>
+
+
+
+									</div>
+
+									<div class="modal-footer">
+									<button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Fermer</button>
+									 
+		    <h:commandButton  value="Enregister" actionListener="#{esiscrumBean.updateTask(t)}" class="btn btn-primary icon-check">
+				<f:ajax render=":formAjax:listtasks" execute="@form" event="keyup" />
+		
+				
+
+				
+			</h:commandButton>
+									</div>
+				
+							</div>
+						</div>
+					</div>
+					<!-- /Add Task -->
+					
+		</ui:repeat>
+					<!-- /formaddbacklogitem -->
+<h:inputHidden value="#{esiscrumBean.utilisateur}"   id="uuu"  />
+		            <!-- Add Task Begin -->
+					<div id="addtask" class="modal fade">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title"><i class="icon-add"></i> &nbsp;Add Task</h5>
+								</div>
+
+					
+									<div class="modal-body">
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Nom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{esiscrumBean.backlogItem.tachenom}" class="form-control" required="false"
+						 />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Assigner a</label>
+											<div class="col-sm-9">
+
+													<select class="selectbox" name="creerpar" id="creerpar" onchange='getUser(this.value,"usertask")'>
+														<option >
+															
+														</option>
+					<ui:repeat value="#{esiscrumBean.listMembre}"  var="m" varstatus="status">
+							<!-- Spinner and progress bar -->
+						<ui:fragment rendered="#{m.username == esiscrumBean.backlogItem.tacheuser}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" selected="selected">
+										#{m.username}
+								</option>
+						</ui:fragment>
+						<ui:fragment rendered="#{m.username != esiscrumBean.backlogItem.tacheuser}">
+								<option value="#{m.username}" data-iconurl="#{m.image}" >
+										#{m.username}
+								</option>
+						</ui:fragment>
+					</ui:repeat>
+													</select>
+											</div>
+										</div>
+<h:inputHidden value="#{esiscrumBean.backlogItem.tacheuser}"   id="usertask"  />
+
+
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Description</label>
+											<div class="col-sm-9">
+											<h:inputTextarea rows="5" cols="5" class="form-control" placeholder="Enter la description du Backlog" value="#{esiscrumBean.backlogItem.tachedescription}"/>
+											</div>
+										</div>
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Total heure estimée</label>
+											<div class="col-sm-4">
+											<div class="input-group">
+											<span class="input-group-addon"><i class="icon-alarm"></i></span>
+											<h:inputText value="#{esiscrumBean.backlogItem.tachetotalheure}" class="form-control" required="false"/>
+										</div>
+											</div>
+										</div>
+
+
+
+									</div>
+
+									<div class="modal-footer">
+									<button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Fermer</button>
+									 
+		    <h:commandButton  value="Enregister" actionListener="#{esiscrumBean.addTask(esiscrumBean.backlogItem.id)}" class="btn btn-primary icon-check">
+				<f:ajax render=":formAjax:listbacklog" execute="@form" event="keyup" />
+				<f:ajax render=":formAjax:listmodals" execute="@form" event="keyup" />
+
+				
+			</h:commandButton>
+									</div>
+				
+							</div>
+						</div>
+					</div>
+					<!-- /Add Task Begin -->
+
+
+
+
+					<!-- Footer -->
+					<div class="footer text-muted text-center">
+						&copy; 2019. <a href="#">EsiScrum</a>
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+
+	<!-- /page container -->
+
+
+</h:form>
+<input type="text" id="iddback" value="rien" hidden="hidden"/>
+</body>
+</html>
+
+
+
+

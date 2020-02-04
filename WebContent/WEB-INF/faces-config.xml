@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+    
+    <managed-bean>
+    	<managed-bean-name>loginsession</managed-bean-name>
+    	<managed-bean-class>com.esiscrum.models.Session</managed-bean-class>
+    	<managed-bean-scope>application</managed-bean-scope>
+    	<managed-property>
+    		<property-name>username</property-name>
+    		<value>Mohsine</value>
+    	</managed-property>
+    	<managed-property>
+    		<property-name>pwd</property-name>
+    		<value>mohsine</value>
+    	</managed-property>
+    	
+    </managed-bean>
+    
+    
+</faces-config>

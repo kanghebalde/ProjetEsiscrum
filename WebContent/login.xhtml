@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+<h:head>
+      	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>EsiScrum</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css" />
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css" />
+	<!-- /global stylesheets -->
+
+
+	<script type="text/javascript" src="assets/js/plugins/loaders/pace.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/loaders/blockui.min.js"></script>
+	<!-- /core JS files -->
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="assets/js/plugins/notifications/bootbox.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/notifications/sweet_alert.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	
+	<script type="text/javascript" src="assets/js/core/app.js"></script>
+	<script type="text/javascript" src="assets/js/pages/components_modals.js"></script>
+	
+	
+	
+	
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/widgets.min.js"></script>
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/switch.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/bootstrap_select.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/inputs/touchspin.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/sliders/nouislider.min.js"></script>
+
+	
+	
+	
+	
+	
+	
+		<script type="text/javascript" src="assets/js/plugins/notifications/jgrowl.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/anytime.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.date.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/picker.time.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/pickers/pickadate/legacy.js"></script>
+	<script type="text/javascript" src="assets/js/pages/picker_date.js"></script>
+	
+	
+
+
+
+	<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/core.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+	
+	<!-- Core JS files -->
+	
+	
+	
+		
+	
+	<script type="text/javascript" src="assets/js/pages/form_selectbox.js"></script>
+
+
+
+<script type="text/javascript" src="js/backlog.js"></script>
+</h:head>
+
+<h:body onload="ll('#{userbean.oldIdBacklog}')" class="login-container">
+<f:view>
+    <h:form id="formAjax" class="form-horizontal">
+	
+
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a style="margin-left: 10px"  href="index.html"><img src="image/laga.png" alt="" /></a>
+		</div>
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content">
+
+					<!-- Advanced login -->
+					
+						<div class="panel panel-body login-form">
+							<div class="text-center">
+								<div class="icon-object border-slate-300 text-slate-300"><i class="icon-reading"></i></div>
+								<h5 class="content-group">Login to your account <small class="display-block">Your credentials</small></h5>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<h:inputText value="#{loginsession.username}" class="form-control"/>
+								<div class="form-control-feedback">
+									<i class="icon-user text-muted"></i>
+								</div>
+							</div>
+
+							<div class="form-group has-feedback has-feedback-left">
+								<h:inputSecret value="#{loginsession.pwd}" class="form-control"/>
+								<div class="form-control-feedback">
+									<i class="icon-lock2 text-muted"></i>
+								</div>
+							</div>
+
+							<div class="form-group login-options">
+								<div class="row">
+									<div class="col-sm-6">
+										<label class="checkbox-inline">
+											<input type="checkbox" class="styled" checked="checked"/>
+											Remember
+										</label>
+									</div>
+
+									<div class="col-sm-6 text-right">
+										<a href="login_password_recover.html">Forgot password?</a>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-group">
+
+											<h:commandButton  value="Login" action="#{loginBean.loginss}" class="btn btn-default btn-block content-group" />		
+			
+							</div>
+
+							<div class="content-divider text-muted form-group"><span>or sign in with</span></div>
+							<ul class="list-inline form-group list-inline-condensed text-center">
+								<li><a href="#" class="btn border-indigo text-indigo btn-flat btn-icon btn-rounded"><i class="icon-facebook"></i></a></li>
+								<li><a href="#" class="btn border-slate-600 text-slate-600 btn-flat btn-icon btn-rounded"><i class="icon-github"></i></a></li>
+								<li><a href="#" class="btn border-info text-info btn-flat btn-icon btn-rounded"><i class="icon-twitter"></i></a></li>
+							</ul>
+
+							<div class="content-divider text-muted form-group"><span>Don't have an account?</span></div>
+							<a href="login_registration.html" class="btn btn-default btn-block content-group" data-toggle="modal" data-target="#formaddmembre">Sign up</a>
+							<span class="help-block text-center no-margin">By continuing, you're confirming that you've read our <a href="#">Terms &amp; Conditions</a> and <a href="#">Cookie Policy</a></span>
+						</div>
+				
+					<!-- /advanced login -->
+
+
+					<!-- Footer -->
+					<div class="footer text-muted text-center">
+						&copy; 2019. <a href="#">Esiscrum</a>
+					</div>
+					<!-- /footer -->
+
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+	
+			
+		         <!--form add membre  -->
+					<div id="formaddmembre" class="modal fade">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">&times;</button>
+									<h5 class="modal-title"> Add a person</h5>
+								</div>
+
+								
+									<div class="modal-body">
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Nom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{esiscrumBean.membre.nom}" class="form-control" required="false" />
+											</div>
+										</div>
+										
+										
+										<div class="form-group">
+											<label class="control-label col-sm-3">Prenom </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{esiscrumBean.membre.prenom}" class="form-control" required="false" />
+											</div>
+										</div>
+
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Username </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{esiscrumBean.membre.username}" class="form-control" required="false" />
+											</div>
+										</div>
+
+									<div class="form-group">
+											<label class="control-label col-sm-3">Email </label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{esiscrumBean.membre.email}" class="form-control" required="false" />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label class="control-label col-sm-3">Password </label>
+											<div class="col-sm-9">							
+							<h:inputSecret value="#{esiscrumBean.membre.pwd}" class="form-control" required="false"   />
+											</div>
+										</div>
+										
+										
+									<div class="form-group">
+											<label class="control-label col-sm-3"> Confirm Password </label>
+											<div class="col-sm-9">							
+							<h:inputSecret value="#{esiscrumBean.membre.pwd}" class="form-control" required="false"   />
+											</div>
+										</div>
+
+
+								<div class="form-group">
+											<label class="control-label col-sm-3">Profile image</label>
+											<div class="col-sm-9">
+											
+				<p:fileUpload value="#{esiscrumBean.file}" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"  mode="simple" skinSimple="true"/>
+										
+										
+										
+											</div>
+										</div>
+
+
+								<div class="form-group">
+											<label class="control-label col-sm-3">Nom Projet</label>
+											<div class="col-sm-9">
+											
+												<h:inputText value="#{esiscrumBean.project.nom}" class="form-control" required="false" />
+											</div>
+										</div>
+										
+										
+	
+					<div class="form-group">
+											<label class="control-label col-sm-3">Description</label>
+											<div class="col-sm-9">
+											<h:inputTextarea rows="5" cols="5" class="form-control" value="#{esiscrumBean.project.description}"/>
+											</div>
+										</div>
+							
+
+
+
+
+
+
+
+
+									</div>
+
+									<div class="modal-footer">
+									<button class="btn btn-link" data-dismiss="modal"><i class="icon-cross"></i> Fermer</button>
+
+			<h:commandButton  value="Enregister"  class="btn btn-primary icon-check">
+
+				
+			</h:commandButton>
+									</div>
+								
+							</div>
+						</div>
+					</div>
+					
+					
+			
+					<!-- /form add membre -->
+					
+
+
+    </h:form>
+    </f:view>
+</h:body>
+</html>

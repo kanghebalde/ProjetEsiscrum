@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      >
+<h:head>
+      	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>EsiScrum</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css" />
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css" />
+	<!-- /global stylesheets -->
+
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css" />
+	<link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/core.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/components.css" rel="stylesheet" type="text/css" />
+	<link href="assets/css/colors.css" rel="stylesheet" type="text/css" />
+
+	<!-- Core JS files -->
+	
+		<script type="text/javascript" src="assets/js/pages/form_selectbox.js"></script>
+			<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/core.min.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/forms/selects/selectboxit.min.js"></script>
+
+</h:head>
+<h:body>
+    <h:form >
+	<!-- Main navbar -->
+	<div class="navbar navbar-inverse">
+		<div class="navbar-header">
+			<a style="margin-left: 10px"  href="index.html"><img src="image/laga.png" alt="" /></a>
+		</div>
+
+
+
+<h:inputHidden value="#{esiscrumBean.ppcurrent}"   id="ppcurrent" valueChangeListener="#{esiscrumBean.changeproject}"   />
+
+
+		<div class="navbar-collapse collapse" id="navbar-mobile">
+			<ul class="nav navbar-nav">
+				<li><a  style="font-size: 16px; margin-right:10px" href="project.xhtml">Project</a></li>
+				<li><a  href="people.xhtml" style="font-size: 16px; margin-right:10px">People</a></li>
+				<li><a href="backlog.xhtml" style="font-size: 16px; margin-right:10px" >Backlog</a></li>
+				<li><a href="sprint.xhtml" style="font-size: 16px; margin-right:10px">Sprint</a></li>
+				<li><a href="taskboard.xhtml" style="font-size: 16px; margin-right:10px">Task board</a></li>
+				<li><a href="sprintchart.xhtml" style="font-size: 16px; margin-right:10px">Sprint chart</a></li>
+					<li><a href="burndown.xhtml" style="font-size: 16px; margin-right:10px">Burndown</a></li>
+				<li><a href="chat.xhtml" style="font-size: 16px; margin-right:10px">Chat</a></li>
+			</ul>
+
+
+
+			<div class="navbar-right">
+				<ul class="nav navbar-nav">
+				
+				<li class="dropdown" style="margin-top:4px;margin-right:4px;">
+				
+								<h:selectOneMenu  value="#{esiscrumBean.currentProject.id}" class="selectbox" valueChangeListener="#{esiscrumBean.ChangeCurrentProject}" onchange="submit()">
+										
+					<f:selectItems value="#{esiscrumBean.listproject}" var="mp" 
+       							 itemLabel="#{mp.nom}" itemValue="#{mp.id}" />
+							
+						</h:selectOneMenu>
+				</li>							
+											
+
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-people"></i>
+							<span class="visible-xs-inline-block position-right">Users</span>
+						</a>
+						
+						<div class="dropdown-menu dropdown-content">
+							<div class="dropdown-content-heading">
+								People
+								<ul class="icons-list">
+									<li><a href="people.xhtml"><i class="icon-gear"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body width-300">
+							
+							<ui:repeat value="#{esiscrumBean.listMembre}" id="listmembre" var="b" varstatus="status">
+								<li class="media">
+									<div class="media-left"><img src="#{b.image}" class="img-circle img-sm" alt=""/></div>
+									<div class="media-body">
+										<a href="#" class="media-heading text-semibold">#{b.username}</a>
+										<span class="display-block text-muted text-size-small">#{b.nom}&nbsp;#{b.prenom}</span>
+									</div>
+									<div class="media-right media-middle"><span class="status-mark border-success"></span></div>
+								</li>
+
+							</ui:repeat>
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="#" data-popup="tooltip" title="All users"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+					</li>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="icon-bubbles4"></i>
+							<span class="visible-xs-inline-block position-right">Messages</span>
+							
+						</a>
+						
+						<div class="dropdown-menu dropdown-content width-350">
+							<div class="dropdown-content-heading">
+								Messages
+								<ul class="icons-list">
+									<li><a href="chat.xhtml"><i class="icon-compose"></i></a></li>
+								</ul>
+							</div>
+
+							<ul class="media-list dropdown-content-body">
+
+
+	
+<ui:repeat value="#{esiscrumBean.listchat}" id="listchat" var="m" varstatus="status">
+								<li class="media">
+									<div class="media-left"><img src="#{m.user.image}" class="img-circle img-sm" alt=""/></div>
+									<div class="media-body">
+										<a href="#" class="media-heading">
+											<span class="text-semibold">#{m.user.username}</span>
+											<span class="media-annotation pull-right">#{m.date}</span>
+										</a>
+
+										<span class="text-muted">#{m.message}</span>
+									</div>
+								</li>
+
+</ui:repeat>
+
+
+							</ul>
+
+							<div class="dropdown-content-footer">
+								<a href="chat.xhtml" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+							</div>
+						</div>
+					</li>
+
+					<li class="dropdown dropdown-user">
+						<a class="dropdown-toggle" data-toggle="dropdown">
+							<img src="#{esiscrumBean.currentMembre.image}" alt=""/>
+							<span>#{esiscrumBean.currentMembre.username}</span>
+							<i class="caret"></i>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-right">
+							<li><a href="profile.xhtml"><i class="icon-user-plus"></i> My profile</a></li>
+							<li><a href="chat.xhtml"><i class="icon-comment-discussion"></i> Messages</a></li>
+							<li class="divider"></li>
+							<li><a href="login.xhtml"><i class="icon-switch2"></i> Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /main navbar -->
+
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Content area -->
+				<div class="content">
+	<p:toolbar style="border:none; background-color: background-color:rgb(245,245,245);" class="panel panel-info" >
+   
+ 
+        <f:facet name="left">
+   					<h:selectOneMenu  value="#{esiscrumBean.currentSprint.id}" class="selectbox" valueChangeListener="#{esiscrumBean.ChangeCurrentSprint}" onchange="submit()">
+										
+					<f:selectItems value="#{esiscrumBean.listSprint}" var="mp" 
+       							 itemLabel="#{mp.nom}" itemValue="#{mp.id}" />
+							
+					</h:selectOneMenu>
+        </f:facet>
+ 
+    </p:toolbar>
+			
+		     <ui:repeat 
+                                value="#{esiscrumBean.listbacklog}"
+                                var="backlogi"
+                               
+                                >
+                <ui:fragment rendered="#{backlogi.sprint == esiscrumBean.currentSprint.id}">                	
+			
+			     <div style="display: none;">
+                     <p:dataList id="idtodoList"
+                                value="#{backlogi.tasks}"/>
+                  </div>
+                  
+             
+			<p:panel id="listbacklog" legend="To do"  class="panel panel-default border-xlg border-#{backlogi.color} ui-g-12" style="min-height: 333px" >
+	
+					<div class="panel panel-#{backlogi.color}" style="margin-left:-17px;margin-right:-17px;;margin-top:-11px;">
+                            <div class="panel-heading">
+									<h5 class="panel-title">#{backlogi.nom}</h5>
+									<div class="heading-elements">
+									<ui:fragment rendered="#{backlogi.prcProgression != 0}">
+									<div class="progress progress-rounded">
+										<div class="progress-bar bg-teal " style="width: #{backlogi.prcProgression}%">
+											<span><h:outputText value=" #{backlogi.prcProgression}%" /></span>
+										</div>
+									</div>
+									
+									
+									</ui:fragment>
+									<ui:fragment rendered="#{backlogi.prcProgression == 0}">
+									<div class="progress progress-rounded">
+										<div class="progress-bar bg-teal " style="width: 100%">
+											<span><h:outputText value=" 0% Complete" /></span>
+										</div>
+									</div>
+									
+									
+									</ui:fragment>
+									<span class="heading-text"><span class="label label-slate border-white label-rounded text-white-600"><h:outputText value="#{backlogi.etat}" /></span>&nbsp;&nbsp;<span class="label label-slate label-rounded border-white text-white-600"><i class="icon-alarm"></i> #{backlogi.totalheure}</span>&nbsp;&nbsp;<span class="label label-slate border-white label-rounded text-white-600"><h:outputText value="#{backlogi.user}" /></span></span>
+									
+	
+																		<ul class="heading-thumbnails pull-right">
+											<li><a href="#"><img src="#{backlogi.userPhoto}" alt="" /></a></li>
+										</ul>
+				                	</div>
+							</div>
+					</div>
+								
+						<div class="panel-body">		
+					<div class="raw">
+										
+
+						<div class="col-md-4">
+													<div>
+						<!-- /premier div -->
+                    <p:panel id="idFieldListtodo" legend="To do" class="panel panel-flat border-lg border-info ui-g-12" style="min-height: 333px" >
+                    
+                    		 <div class="panel panel-info " style="margin-left:-18px;margin-right:-18px;;margin-top:-11px;">
+                                                			<div class="panel-heading">
+									<h5 class="panel-title">To do</h5>
+								</div>
+								</div>
+
+
+                    <ui:repeat 
+                                value="#{backlogi.tasks}"
+                                var="item"
+                               
+                                >
+                             
+                                
+                                
+                                
+                        <ui:fragment rendered="#{item.etat == 'todo'}">        					      
+				
+							<!-- Progress bar -->
+							<p:panel id="idPaneltodoitem" class="ui-g-6" style="border: hidden;">
+								<div  class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title"><h:outputText  id="idtodoitem" value="#{item.nom}"/></h6>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-8">
+									
+									<div class="progress progress-rounded">
+										<div class="progress-bar progress-bar-info" style="width: 100%">
+											<span>0% Complete</span>
+										</div>
+									</div>
+
+										</div>
+
+									<div class="col-md-4">
+
+						
+						<span class="label label-info label-rounded"><i class="icon-alarm"></i> #{item.totalHeure}</span>
+										</div>
+
+
+									</div>
+
+
+								</div>
+								<div class="panel-footer">
+									<div class="heading-elements">
+									<span class="heading-text"><span class="label label-default label-rounded">#{item.user}</span></span>
+
+									<ul class="heading-thumbnails pull-right">
+											<li><a href="#"><img src="#{item.imageUser}" alt="" /></a></li>
+										</ul>
+									</div>
+								</div>
+								
+ 								</div>
+							</p:panel>
+							<!-- /progress bar -->
+
+											
+
+
+
+									
+                                
+                                
+                                
+                                
+                                
+                                
+
+                        <p:draggable for="idPaneltodoitem"
+                                     revert="true" >
+                        </p:draggable>
+                      
+                      </ui:fragment>
+                    </ui:repeat>
+
+	
+                    <p:droppable for="idFieldListtodo"
+                                 datasource="idtodoList" tolerance="touch">
+                        <p:ajax listener="#{esiscrumBean.onTaskDroppedtodo}"
+                                update="listbacklog idFieldListtodo idFieldListInprogress idFieldListdone"/>
+                    </p:droppable>
+                    </p:panel>
+      				</div>
+				<!-- /premier div -->
+						</div>
+					    <!-- /col4 -->
+
+					    <div class="col-md-4">
+						<div>
+						<!-- /premier div -->
+						
+                    <p:panel id="idFieldListInprogress" legend="In progress" class="panel panel-flat border-lg border-primary ui-g-12" style="min-height: 333px">
+       
+							 <div class="panel panel-primary" style="margin-left:-18px;margin-right:-18px;;margin-top:-11px;">
+                                                			<div class="panel-heading">
+									<h5 class="panel-title">In progress</h5>
+								</div>
+                    
+                    </div>
+      
+                    <ui:repeat 
+                                value="#{backlogi.tasks}"
+                                var="selectedItem"
+                                >
+                         <ui:fragment rendered="#{selectedItem.etat == 'inprogress'}">       
+                      <p:panel id="idSelectedItems" class="ui-g-6" style="border: hidden;">
+							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title"><h:outputText  id="idtodoitem" value="#{selectedItem.nom}"/></h6>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-8">
+
+									<div class="progress progress-rounded">
+										<div class="progress-bar progress-bar-primary" style="width: 100%">
+											<span>0% Complete</span>
+										</div>
+									</div>
+
+										</div>
+
+									<div class="col-md-4">
+
+						
+						<span class="label label-info label-rounded"><i class="icon-alarm"></i> #{selectedItem.totalHeure}</span>
+										</div>
+
+
+									</div>
+
+
+								</div>
+								<div class="panel-footer">
+									<div class="heading-elements">
+									<span class="heading-text"><span class="label label-default label-rounded">#{selectedItem.user}</span></span>
+
+									<ul class="heading-thumbnails pull-right">
+											<li><a href="#"><img src="#{selectedItem.imageUser}" alt="" /></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+                                </p:panel>
+                                
+                                
+
+                        
+                     <p:draggable for="idSelectedItems"
+                                     revert="true" >
+                        </p:draggable>
+                        
+                        
+                         </ui:fragment>
+                    </ui:repeat>
+                    <p:droppable for="idFieldListInprogress"
+                                 datasource="idtodoList"  tolerance="touch">
+                        <p:ajax listener="#{esiscrumBean.onTaskDroppedinprogress}"
+                                update="listbacklog idFieldListtodo idFieldListInprogress idFieldListdone"/>
+                    </p:droppable>
+
+                    </p:panel>
+     
+				</div>
+				<!-- /premier div -->
+						</div>
+					    <!-- /col4 -->
+
+
+					    <div class="col-md-4">
+						<div>
+						<!-- /premier div -->
+                    <p:panel id="idFieldListdone" legend="done" class="panel panel-flat border-lg border-success ui-g-12" style="min-height: 333px">
+                    <div class="panel panel-success" style="margin-left:-18px;margin-right:-18px;margin-top:-11px;">
+                                                			<div class="panel-heading" >
+									<h5 class="panel-title">Done</h5>
+								</div>
+                    
+                    </div>
+            
+        
+                    <ui:repeat 
+                                value="#{backlogi.tasks}"
+                                var="doneItem"
+                              
+                                
+                                >
+                                
+                                
+                       <ui:fragment rendered="#{doneItem.etat == 'done'}"> 
+                  <p:panel id="iddoneitem" class="ui-g-6" style="border: hidden;">
+                                  							<div class="panel panel-flat">
+								<div class="panel-heading">
+									<h6 class="panel-title"><h:outputText  id="idtodoitem" value="#{doneItem.nom}"/></h6>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class="col-md-8">
+
+									<div class="progress progress-rounded">
+										<div class="progress-bar progress-bar-success" style="width: 100%">
+											<span>100% Complete</span>
+										</div>
+									</div>
+
+										</div>
+
+									<div class="col-md-4">
+
+						
+						<span class="label label-info label-rounded"><i class="icon-alarm"></i> #{doneItem.totalHeure}</span>
+										</div>
+
+
+									</div>
+
+
+								</div>
+								<div class="panel-footer">
+									<div class="heading-elements">
+									<span class="heading-text"><span class="label label-default label-rounded">#{doneItem.user}</span></span>
+
+									<ul class="heading-thumbnails pull-right">
+											<li><a href="#"><img src="#{doneItem.imageUser}" alt="" /></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+                                </p:panel>
+                                
+
+                        
+                     <p:draggable for="iddoneitem" 
+                                     revert="true">
+                        </p:draggable>
+                        
+                         </ui:fragment>
+                    </ui:repeat>
+
+
+                    <p:droppable  for="idFieldListdone" tolerance="touch"  datasource="idtodoList ">
+                    <p:ajax listener="#{esiscrumBean.onTaskDroppeddone}"
+                                update="listbacklog idFieldListtodo idFieldListInprogress idFieldListdone"/>
+                    </p:droppable>
+
+                    </p:panel>
+ 
+
+				</div>
+				<!-- /premier div -->
+						</div>
+					    <!-- /col4 -->
+
+
+
+					</div>
+					<!-- /raw -->
+</div>
+
+
+</p:panel>
+
+</ui:fragment>
+</ui:repeat><!-- /boocle backlogitems -->
+
+
+
+
+
+					<!-- /footer -->
+				</div>
+				<!-- /content area -->
+
+			</div>
+			<!-- /main content -->
+
+		</div>
+		<!-- /page content -->
+
+	</div>
+	<!-- /page container -->
+
+    
+    </h:form>
+</h:body>
+</html>
